@@ -38,6 +38,7 @@ async def roll(ctx, number_of_dice: int, number_of_sides: int):
     await ctx.send(', '.join(dice))
 
 @bot.command(name='create-channel', help='Creating new channel')
+@commands.has_role('admin')
 async def create_channel(ctx, channel_name: str):
     guild = ctx.guild
     existing_channel = discord.utils.get(guild.channels, name=channel_name)
